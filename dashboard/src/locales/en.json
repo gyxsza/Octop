@@ -3345,6 +3345,7 @@
     "issueStarted": "Certificate issuance started",
     "issueFailed": "Failed to start issuance",
     "notEligible": "Set bind_host to 0.0.0.0 and port to 80 in config.json, then restart before first issuance.",
+    "desktopNotSupported": "The desktop app binds to a local loopback address and does not support built-in HTTPS certificate issuance. Use a reverse proxy for HTTPS, or configure TLS in a server deployment or CLI run.",
     "restartRequired": "Certificate installed. Restart Octop to enable HTTPS on 443 (HTTP 80 stays open for renewals).",
     "restartRequiredHint": "Click the button below to confirm and restart. The page will refresh automatically when the service is back online.",
     "activeCert": "TLS active on 443 — HTTP {{httpPort}} kept for renewals — expires {{expires}}",
