@@ -11,6 +11,7 @@ import {
 } from "../../../api/modules/tls";
 import { updateApi } from "../../../api/modules/update";
 import { useServiceRestartContext } from "../../../context/ServiceRestartContext";
+import { isDesktopShell } from "../../../utils/desktopBridge";
 import { TabPanelHeader } from "../AdvancedSettings/TabPanelHeader";
 import styles from "./index.module.less";
 
@@ -266,7 +267,15 @@ export function HttpsSettingsPanel() {
             )}
 
             {!eligible && !tlsEnabled && (
-              <Alert type="info" showIcon message={t("tls.notEligible")} />
+              <Alert
+                type="info"
+                showIcon
+                message={
+                  isDesktopShell()
+                    ? t("tls.desktopNotSupported")
+                    : t("tls.notEligible")
+                }
+              />
             )}
 
             {status?.tls.dual_listeners && (
